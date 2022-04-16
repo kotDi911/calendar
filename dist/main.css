@@ -1,0 +1,392 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
+* {
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body, p {
+    margin: 0;
+}
+.body {
+    width: 100%;
+    height: 100vh;
+}
+.body[auth] {
+    background: url(5105ac1717b5d65637e1.jpg);
+    background-size: 100% 100%;
+}
+.body[month] {
+    background-position: center !important;
+    background-size: cover !important;
+}
+.body[month="1"] {
+    background: url(170110f519c785cd7b4c.jpg);
+}
+.body[month="2"] {
+    background: url(bfa5f22884c54662e06d.jpg);
+}
+.body[month="3"] {
+    background: url(3c7b8b1db2c36277ac39.jpg);
+}
+.body[month="4"] {
+    background: url(c81edf8d6eb86b44c28f.jpg);
+}
+.body[month="5"] {
+    background: url(023f37cfb87fc05f9b89.jpg);
+}
+.body[month="6"] {
+    background: url(a697591f6972997a070d.jpg);
+}
+.body[month="7"] {
+    background: url(4336243dd22dc5ce7373.jpg);
+}
+.body[month="8"] {
+    background: url(344fa1f345ade82e09cd.jpg);
+}
+.body[month="9"] {
+    background: url(ec57b62ac5a591d18b2d.jpg);
+}
+.body[month="10"] {
+    background: url(05b6987a4a4bf191bdbb.jpg);
+}
+.body[month="11"] {
+    background: url(8c7e8bb61bcc93bb823b.jpg);
+}
+.body[month="12"] {
+    background: url(8ac97b87a415ea2ad15a.jpg);
+}
+
+.app{
+    width: 30%;
+    margin: auto;
+    background: #000000bf;
+    border-radius: 25px;
+    padding: 20px;
+}
+.switch{
+    background: #03e8ffa6;
+    color: white;
+    margin: 0 auto 15px;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid white;
+    box-shadow: inset 0 -10px 10px 2px black;
+    display: block;
+    width: 50%;
+}
+
+/*------------------- ------ ----------------*/
+.flex {
+    display: flex;
+}
+.space-between {
+    justify-content: space-between;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+/*------------------- header ----------------*/
+.header {
+    position: relative;
+    align-items: center;
+    padding: 0 20px;
+    background: #0000004f;
+}
+.logo-cont {
+    flex-direction: row-reverse;
+    /*align-items: center;*/
+    /*background: linear-gradient(90deg, #1bff00, #000000);*/
+    /*border-radius: 31px;*/
+    /*padding-left: 10px;*/
+}
+.logo {
+    background: radial-gradient(transparent, black);
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid #00ff11a1;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.avatar {
+    background: radial-gradient(transparent, black);
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid #00ff11a1;
+    font-size: 20px;
+    cursor: pointer;
+}
+.current-date {
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    color: white;
+}
+.set-cont{
+    display: flex;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.5s ease-out;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(27, 255, 0), rgb(0, 0, 0));
+    border-radius: 31px;
+}
+.schedule-btn, .settings-btn {
+    display: none;
+    cursor: pointer;
+}
+.set-cont-btn{
+    background: radial-gradient(transparent, black);
+    padding: 5px;
+    color: white;
+    border: 1px solid #00ff11a1;
+    font-size: 16px;
+    border-radius: 19px;
+    cursor: pointer;
+}
+/*-------------------- main -----------------*/
+.main-container {
+    height: 100%;
+    padding: 15px 0;
+    margin: 0 20px;
+}
+.calendar-cont {
+    width: 100%;
+    height: max-content;
+    background: rgba(255, 255, 255, 0.44);
+}
+/*------------------ calendar ---------------*/
+.options-cont {
+    background: #000000a1;
+    padding: 10px;
+    align-items: baseline;
+}
+.date {
+    font-size: 24px;
+    color: white;
+}
+.task-name{
+    height: 100%;
+    margin: 0 2% 2%;
+}
+.day-of-week{
+    background: #0a1144f0;
+    color: wheat;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+.empty{
+    background: #005f9766;
+}
+/*------------------- ------ ----------------*/
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /*grid-auto-rows: 20vh;*/
+    gap: 5px;
+}
+.day {
+    height: 12vh;
+    background: #110909b3;
+    color: white;
+    text-align: center;
+}
+.calendar-btn, .btn{
+    background: rgba(0, 0, 0, 0.46);
+    color: white;
+    font-size: 18px;
+    padding: 5px 30px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+/*------------------- panel -----------------*/
+.panel-cont {
+    width: 30%;
+    margin-left: 15px;
+    background: linear-gradient(180deg, #000000ab, transparent, #000000d9);
+}
+.panel-options {
+    position: relative;
+    height: 70%;
+}
+.tasks{
+    overflow-y: scroll;
+    height: 100%;
+}
+.panel-btn{
+    width: 100%;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.schedule-cont{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    color: white;
+    background: linear-gradient(181deg, black, transparent);
+    padding: 15px;
+}
+.sch-info{
+    margin-top: 5px;
+}
+.update-schedule-btn{
+    font-size: 20px;
+    border: 1px solid #ffffff59;
+    cursor: pointer;
+}
+.fa-arrows-rotate{
+    color: lime;
+    font-size: 24px;
+}
+/*------------------- task ------------------*/
+.task-container {
+    justify-content: flex-end;
+    margin: 2px 5px 0;
+}
+.task-btn{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #00000091;
+    background: linear-gradient(0deg, black, red, black);
+    cursor: pointer;
+    /*background: linear-gradient(to left, red, black);*/
+}
+.task-color {
+    height: 100%;
+    width: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px white;
+}
+.edit-task-btn, .dell-task-btn{
+    font-size: 20px;
+    border: 1px solid #00000091;
+    background: linear-gradient(0deg, black, #ffffff73, black);
+    cursor: pointer;
+}
+.fa-pen-clip{
+color: orange;
+}
+.fa-trash-can{
+color: red;
+}
+.task-btn[active-task] {
+    /*background: linear-gradient(to left, green, black);*/
+}
+.task-btn[active-task] {
+    background: linear-gradient(to top, black, green, black);
+    cursor: pointer;
+}
+/*------------------- form ------------------*/
+.pop-up-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(35 72 101);
+}
+.form {
+    margin: 10px 20px;
+}
+.form-title{
+    margin: 10px auto;
+    font-size: 30px;
+}
+.text-control > label, .text-control > input{
+    width: 50%;
+    font-size: 24px;
+}
+.text-control > label, .form-title {
+    color: white;
+}
+.text-control{
+    margin-bottom: 15px;
+}
+.btn-form{
+    background: #03e8ffa6;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 2px 0;
+    border: 2px solid white;
+    box-shadow: inset 0 -10px 10px 2px black;
+    cursor: pointer;
+}
+
+/*------------------- panel ----------------*/
+
+/*------------------- footer ----------------*/
+.footer {
+    background: #000000a1;
+    height: 6%;
+    align-items: center;
+    padding: 0 20px;
+}
+.info-text, .contacts{
+    color: white;
+    font-size: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 2px -1px 2px 1px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #110909;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+@media (max-width: 1200px) {
+    .schedule-btn, .settings-btn  {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 900px) {
+    .schedule-btn, .settings-btn  {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 750px) {
+
+}
+
+@media (max-width: 550px) {
+
+}
+
+@media (max-width: 450px) {
+
+}
