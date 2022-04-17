@@ -22,7 +22,7 @@ export class Day {
         this.containerDay = document.createElement('div');
         this.containerDay.classList.add('number-day');
         this.taskNameCont = document.createElement('p');
-        this.taskNameCont.classList.add('task-name');
+        this.taskNameCont.classList.add('task-name-day');
         this.number = document.createElement('span');
         this.number.innerText = date;
 
@@ -70,7 +70,7 @@ export class Day {
                 }
             }else {
                     this.getTask({month: this.month, year: this.year}).then(r => {
-                        console.log(r)
+                        console.log(r);
                         this.deleteTask(r);
                         this.createTask({id: opt.id, date: this.dataDate});
                     }).then(r => console.log(r));

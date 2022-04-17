@@ -10,7 +10,7 @@ const onReady = (appContainer) => {
 };
 const getLoginForm = (appContainer) =>
     new Form({
-        title: "",
+        title: "Login",
         inputs: loginConfig.map((input) => new Input(input)),
         submitBtnText: "Submit",
         onSubmit: async (data) => {
@@ -22,7 +22,7 @@ const getLoginForm = (appContainer) =>
 
 const getRegisterForm = (appContainer) =>
     new Form({
-        title: "",
+        title: "Register",
         inputs: registerConfig.map((input) => new Input(input)),
         submitBtnText: "Submit",
         onSubmit: async (data) => {
@@ -51,7 +51,7 @@ export class Auth {
     createFormContainer() {
         this.formContainer.classList.add('auth-form');
         this.switchBtn.classList.add('switch');
-        this.switchBtn.innerText = 'REGISTER';
+        this.switchBtn.innerText = 'LOGIN';
         this.switchBtn.addEventListener("click", () => {
             this.renderAuthForm();
         });
@@ -65,10 +65,10 @@ export class Auth {
         }
 
         if (this.login) {
-            this.switchBtn.innerText = 'REGISTER';
+            this.switchBtn.innerText = 'LOGIN';
             this.form = this.regsterForm;
         } else {
-            this.switchBtn.innerText = 'LOGIN';
+            this.switchBtn.innerText = 'REGISTER';
             this.form = this.loginForm;
         }
 

@@ -19,16 +19,16 @@ export class Schedule {
         this.sumHours.classList.add('sum-hours');
         this.sumMoney.classList.add('sum-money');
 
-        this.closeBtn.classList.add('btn', 'close-btn');
+        this.closeBtn.classList.add('btn', 'update-schedule-btn');
         this.updateBtn.classList.add('btn', 'update-schedule-btn');
 
         this.sumHoursContainer.innerText = 'Время роботы за месяц: ';
         this.sumMoneyContainer.innerText = 'Сумма за месяц: ';
 
-        this.closeBtn.innerText = 'close';
+        this.closeBtn.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
         this.updateBtn.innerHTML = `<i class="fa-solid fa-arrows-rotate"></i>`;
 
-        this.closeBtn.addEventListener('click', () => this.container.remove());
+        this.closeBtn.addEventListener('click', () => this.container.style.display = 'none');
         this.updateBtn.addEventListener('click', async () => {
             await api.getCalendar({month: calendarMonth, year: calendarYear})
                 .then((res) => {
@@ -42,7 +42,13 @@ export class Schedule {
         this.sumHoursContainer.append(this.sumHours);
         this.sumMoneyContainer.append(this.sumMoney);
         this.createText(Schedule.getSum(this.options));
-        this.container.append(this.updateBtn, this.sumHoursContainer, this.sumMoneyContainer)
+
+        if(window.innerWidth < 551){
+            this.container.classList.add('space-between');
+            this.container.append(this.updateBtn, this.sumHoursContainer, this.sumMoneyContainer, this.closeBtn)
+        }else {
+            this.container.append(this.updateBtn, this.sumHoursContainer, this.sumMoneyContainer)
+        }
     }
 
     static getSum(options) {
@@ -83,7 +89,7 @@ export class Schedule {
 
     createText(options) {
         const {hours, minutes, money} = options;
-        this.sumHours.innerText = `${hours}-часов ${minutes}-минут`;
+        this.sumHours.innerText = `${hours}-ч. ${minutes}-мин.`;
         this.sumMoney.innerText = `${money} $`;
     }
 

@@ -78,6 +78,10 @@ export class Task {
                 el.removeAttribute('active-task')
             }
             this.taskBtn.setAttribute('active-task', '');
+            if (window.innerWidth < 551) {
+                const panelOption = document.querySelector('.panel-options');
+                panelOption.style.display = 'none'
+            }
             if (this.name === 'Clear task') {
                 opt = {name: '', color: "none"};
                 return opt

@@ -1,72 +1,90 @@
 * {
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 body, p {
     margin: 0;
 }
+
 .body {
     width: 100%;
     height: 100vh;
 }
+
 .body[auth] {
     background: url("./img/auth.jpg");
     background-size: 100% 100%;
 }
+
 .body[month] {
     background-position: center !important;
     background-size: cover !important;
 }
+
 .body[month="1"] {
     background: url("./img/1.jpg");
 }
+
 .body[month="2"] {
     background: url("./img/2.jpg");
 }
+
 .body[month="3"] {
     background: url("./img/3.jpg");
 }
+
 .body[month="4"] {
     background: url("./img/4.jpg");
 }
+
 .body[month="5"] {
     background: url("./img/5.jpg");
 }
+
 .body[month="6"] {
     background: url("./img/6.jpg");
 }
+
 .body[month="7"] {
     background: url("./img/7.jpg");
 }
+
 .body[month="8"] {
     background: url("./img/8.jpg");
 }
+
 .body[month="9"] {
     background: url("./img/9.jpg");
 }
+
 .body[month="10"] {
     background: url("./img/10.jpg");
 }
+
 .body[month="11"] {
     background: url("./img/11.jpg");
 }
+
 .body[month="12"] {
     background: url("./img/12.jpg");
 }
 
-.app{
+.app {
     width: 30%;
     margin: auto;
     background: #000000bf;
     border-radius: 25px;
-    padding: 20px;
+    padding: 20px 0;
 }
-.switch{
+
+.switch {
     background: #03e8ffa6;
     color: white;
-    margin: 0 auto 15px;
+    margin: 0 auto;
     font-size: 18px;
     padding: 10px;
     border: 2px solid white;
@@ -79,13 +97,16 @@ body, p {
 .flex {
     display: flex;
 }
+
 .space-between {
     justify-content: space-between;
 }
-.flex-column{
+
+.flex-column {
     display: flex;
     flex-direction: column;
 }
+
 /*------------------- header ----------------*/
 .header {
     position: relative;
@@ -93,6 +114,7 @@ body, p {
     padding: 0 20px;
     background: #0000004f;
 }
+
 .logo-cont {
     flex-direction: row-reverse;
     /*align-items: center;*/
@@ -100,6 +122,7 @@ body, p {
     /*border-radius: 31px;*/
     /*padding-left: 10px;*/
 }
+
 .logo {
     background: radial-gradient(transparent, black);
     padding: 10px 15px;
@@ -107,8 +130,8 @@ body, p {
     color: white;
     border: 1px solid #00ff11a1;
     font-size: 20px;
-    margin-right: 10px;
 }
+
 .avatar {
     background: radial-gradient(transparent, black);
     padding: 10px 15px;
@@ -118,26 +141,30 @@ body, p {
     font-size: 20px;
     cursor: pointer;
 }
+
 .current-date {
     font-size: 24px;
     position: absolute;
     left: 50%;
     color: white;
 }
-.set-cont{
+
+.set-cont {
     display: flex;
     max-width: 0;
     overflow: hidden;
     transition: max-width 0.5s ease-out;
     align-items: center;
-    background: linear-gradient(90deg, rgb(27, 255, 0), rgb(0, 0, 0));
+    /*background: linear-gradient(90deg, rgb(27, 255, 0), rgb(0, 0, 0));*/
     border-radius: 31px;
 }
+
 .schedule-btn, .settings-btn {
     display: none;
     cursor: pointer;
 }
-.set-cont-btn{
+
+.set-cont-btn {
     background: radial-gradient(transparent, black);
     padding: 5px;
     color: white;
@@ -146,41 +173,49 @@ body, p {
     border-radius: 19px;
     cursor: pointer;
 }
+
 /*-------------------- main -----------------*/
 .main-container {
     height: 100%;
     padding: 15px 0;
     margin: 0 20px;
 }
+
 .calendar-cont {
     width: 100%;
     height: max-content;
     background: rgba(255, 255, 255, 0.44);
 }
+
 /*------------------ calendar ---------------*/
 .options-cont {
     background: #000000a1;
     padding: 10px;
-    align-items: baseline;
+    align-items: center;
 }
+
 .date {
     font-size: 24px;
     color: white;
 }
-.task-name{
+
+.task-name-day {
     height: 100%;
     margin: 0 2% 2%;
 }
-.day-of-week{
+
+.day-of-week {
     background: #0a1144f0;
     color: wheat;
     font-size: 20px;
     text-align: center;
     margin-top: 5px;
 }
-.empty{
+
+.empty {
     background: #005f9766;
 }
+
 /*------------------- ------ ----------------*/
 .calendar {
     display: grid;
@@ -188,13 +223,15 @@ body, p {
     /*grid-auto-rows: 20vh;*/
     gap: 5px;
 }
+
 .day {
     height: 12vh;
     background: #110909b3;
     color: white;
     text-align: center;
 }
-.calendar-btn, .btn{
+
+.calendar-btn, .btn {
     background: rgba(0, 0, 0, 0.46);
     color: white;
     font-size: 18px;
@@ -202,27 +239,32 @@ body, p {
     border: 2px solid white;
     cursor: pointer;
 }
+
 /*------------------- panel -----------------*/
 .panel-cont {
     width: 30%;
     margin-left: 15px;
     background: linear-gradient(180deg, #000000ab, transparent, #000000d9);
 }
+
 .panel-options {
     position: relative;
     height: 70%;
 }
-.tasks{
+
+.tasks {
     overflow-y: scroll;
     height: 100%;
 }
-.panel-btn{
+
+.panel-btn {
     width: 100%;
     padding: 5px 0;
     margin-bottom: 10px;
     cursor: pointer;
 }
-.schedule-cont{
+
+.schedule-cont {
     height: 30%;
     display: flex;
     flex-direction: column;
@@ -231,24 +273,36 @@ body, p {
     background: linear-gradient(181deg, black, transparent);
     padding: 15px;
 }
-.sch-info{
+
+.sch-info {
     margin-top: 5px;
+    font-size: 20px;
 }
-.update-schedule-btn{
+
+.update-schedule-btn {
     font-size: 20px;
     border: 1px solid #ffffff59;
     cursor: pointer;
 }
-.fa-arrows-rotate{
+
+.fa-arrows-rotate {
     color: lime;
     font-size: 24px;
 }
+.fa-circle-xmark{
+    color: red;
+}
+.close-btn{
+    display: none;
+}
+
 /*------------------- task ------------------*/
 .task-container {
     justify-content: flex-end;
     margin: 2px 5px 0;
 }
-.task-btn{
+
+.task-btn {
     width: 100%;
     color: white;
     font-size: 20px;
@@ -257,6 +311,7 @@ body, p {
     cursor: pointer;
     /*background: linear-gradient(to left, red, black);*/
 }
+
 .task-color {
     height: 100%;
     width: 25px;
@@ -264,25 +319,31 @@ body, p {
     border-radius: 50%;
     box-shadow: inset 0 0 0 1px white;
 }
-.edit-task-btn, .dell-task-btn{
+
+.edit-task-btn, .dell-task-btn {
     font-size: 20px;
     border: 1px solid #00000091;
     background: linear-gradient(0deg, black, #ffffff73, black);
     cursor: pointer;
 }
-.fa-pen-clip{
-color: orange;
+
+.fa-pen-clip {
+    color: orange;
 }
-.fa-trash-can{
-color: red;
+
+.fa-trash-can {
+    color: red;
 }
+
 .task-btn[active-task] {
     /*background: linear-gradient(to left, green, black);*/
 }
+
 .task-btn[active-task] {
     background: linear-gradient(to top, black, green, black);
     cursor: pointer;
 }
+
 /*------------------- form ------------------*/
 .pop-up-form {
     position: absolute;
@@ -292,35 +353,44 @@ color: red;
     bottom: 0;
     background: rgb(35 72 101);
 }
+
 .form {
     margin: 10px 20px;
 }
-.form-title{
+
+.form-title {
     margin: 10px auto;
     font-size: 30px;
 }
-.text-control > label, .text-control > input{
-    width: 50%;
-    font-size: 24px;
-}
+
 .text-control > label, .form-title {
     color: white;
 }
-.text-control{
+
+.text-control > label {
+    width: 40%;
+    font-size: 24px;
+}
+
+.input {
+    width: 60%;
+    font-size: 24px;
+}
+
+.text-control {
     margin-bottom: 15px;
 }
-.btn-form{
+
+.btn-form {
     background: #03e8ffa6;
     color: white;
-    margin-bottom: 10px;
     font-size: 18px;
+    margin-bottom: 10px;
     padding: 2px 0;
     border: 2px solid white;
     box-shadow: inset 0 -10px 10px 2px black;
     cursor: pointer;
 }
-
-/*------------------- panel ----------------*/
 
 /*------------------- footer ----------------*/
 .footer {
@@ -329,7 +399,8 @@ color: red;
     align-items: center;
     padding: 0 20px;
 }
-.info-text, .contacts{
+
+.info-text, .contacts {
     color: white;
     font-size: 20px;
 }
@@ -361,29 +432,306 @@ color: red;
 }
 
 @media (max-width: 1200px) {
-    .schedule-btn, .settings-btn  {
-        display: inline-block;
+    .app {
+        width: 45%;
     }
 }
 
 @media (max-width: 1050px) {
+    .day {
+        height: 11vh;
+    }
 
+    .sch-info {
+        font-size: 18px;
+    }
+
+    .update-schedule-btn {
+        font-size: 18px;
+        padding: 2px 0;
+    }
+
+    .form {
+        margin: 5px 10px;
+    }
+
+    .text-control {
+        margin-bottom: 10px;
+    }
+
+    .text-control > label, .input {
+        font-size: 20px;
+    }
+
+    .panel-cont {
+        margin-left: 10px;
+    }
 }
 
 @media (max-width: 900px) {
-    .schedule-btn, .settings-btn  {
-        display: inline-block;
+    .switch, .options-cont, .schedule-cont {
+        padding: 5px
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .main-container {
+        padding: 10px 0;
+    }
+
+    .set-cont-btn {
+        padding: 3px 5px;
+    }
+
+    .calendar-btn, .logo, .task-name, .fa-solid,
+    .text-control > label, .input,
+    .edit-task-btn, .dell-task-btn {
+        font-size: 16px;
+    }
+
+    .logo {
+        border-radius: 25px;
+    }
+
+    .avatar {
+        padding: 7px 11px;
+    }
+
+    .form {
+        margin: 0 5px;
+    }
+
+    .form-title {
+        font-size: 26px;
+        margin: 5px auto;
+    }
+
+    .panel-btn {
+        padding: 2px 0;
+        margin-bottom: 3px;
+    }
+
+    .task-color {
+        width: 20px;
+    }
+
+    .info-text, .contacts {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 750px) {
+    .header, .footer {
+        padding: 0 10px;
+    }
 
+    .main-container {
+        margin: 0 10px;
+    }
+
+    .set-cont-btn {
+        font-size: 14px;
+    }
+
+    .calendar-btn, .logo, .task-name, .fa-solid,
+    .text-control > label, .input,
+    .edit-task-btn, .dell-task-btn {
+        font-size: 15px;
+    }
+
+    .btn-form, .sch-info, .info-text, .contacts {
+        font-size: 16px;
+    }
+
+    .panel-cont {
+        margin-left: 5px;
+        width: 35%;
+    }
+
+    .a-center {
+        align-items: center;
+    }
+
+    .current-date {
+        position: relative;
+        left: 0;
+        margin-left: 10px;
+    }
 }
 
 @media (max-width: 550px) {
+    .bb{
 
+        border-bottom: 1px solid white;
+    }
+    .main-container {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .set-cont-btn {
+        display: inline-block;
+    }
+
+    .app {
+        width: 70%;
+    }
+
+    .switch {
+        padding: 2px;
+        font-size: 16px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .fa-arrows-rotate, .fa-circle-xmark{
+        font-size: 18px;
+    }
+    .text-control > label, .input {
+        font-size: 18px;
+    }
+
+    .panel-cont {
+        flex-direction: row;
+        margin: 7px 0 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .schedule-cont {
+        display: none;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .sch-info {
+        margin: 0;
+        justify-content: space-evenly;
+    }
+
+    .update-schedule-btn {
+        padding: 5px 6px 3px;
+        border: none !important;
+        box-shadow: 0 0 3px 1px white;
+        border-radius: 50%;
+    }
+
+    .panel-options {
+        position: absolute;
+        height: 75%;
+        width: 45%;
+        display: none;
+        top: 10px;
+        right: 0;
+        background: #000000b5;
+    }
+
+    .task-color {
+        width: 15px;
+        margin-left: 5px;
+    }
+
+    .close-btn, .back-btn {
+        width: 30%;
+    }
+    .close-btn{
+        display: inline-block;
+        color: red;
+    }
+
+    .btn {
+        border: 1px solid white;
+    }
+
+    .day > span, .task-name-day {
+        font-size: 12px;
+    }
+
+    .panel-btn {
+        border: none !important;
+    }
 }
 
 @media (max-width: 450px) {
+    .day {
+        height: 10vh;
+    }
 
+    .logo {
+        padding: 6px;
+    }
+
+    .avatar {
+        padding: 3px 8px;
+    }
+
+    .set-cont-btn {
+        padding: 3px;
+    }
+
+    .calendar-btn, .task-name, .fa-solid,
+    .text-control > label, .input,
+    .edit-task-btn, .dell-task-btn, .set-cont-btn {
+        font-size: 12px;
+    }
+
+    .switch, .text-control > label, .input,
+    .btn-form, .btn-form, .sch-info, .info-text, .contacts,
+    .btn, .date, .current-date {
+        font-size: 14px;
+    }
+
+    .current-date {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 350px) {
+    .day {
+        height: 9vh;
+    }
+
+    .header, .footer {
+        padding: 0 5px;
+    }
+
+    .main-container {
+        margin: 0 5px;
+    }
+
+    .logo {
+        padding: 3px;
+    }
+
+    .avatar {
+        padding: 3px 7px;
+    }
+
+    .calendar-btn, .task-name, .fa-solid,
+    .text-control > label, .input,
+    .edit-task-btn, .dell-task-btn, .set-cont-btn,
+    .task-name-day {
+        font-size: 10px;
+    }
+
+    .switch, .text-control > label, .input,
+    .btn-form, .btn-form, .sch-info, .info-text, .contacts,
+    .btn, .date, .avatar, .current-date, .logo, .date,
+    .current-date {
+        font-size: 12px;
+    }
+
+    .day-of-week {
+        font-size: 16px;
+    }
+
+    .calendar-btn {
+        padding: 2px 5px;
+    }
 }

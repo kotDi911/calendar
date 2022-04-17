@@ -27,6 +27,7 @@ export class Board {
         this.setBtnContainer = document.createElement('div');
         this.settingsBtn = document.createElement('button');
         this.scheduleBtn = document.createElement('button');
+        this.logoDateCont = document.createElement('div');
 //---------------------------------------- main ----------------------------------------//
         this.mainContaimer = document.createElement('main');
         this.containerCalendar = document.createElement('div');
@@ -43,43 +44,71 @@ export class Board {
     }
 
     createHeader() {
-        const avatar = this.avatar;
-
         this.headerContainer.classList.add('header', 'flex', 'space-between');
         this.avatarContainer.classList.add('logo-cont', 'flex');
         this.settingsBtn.classList.add('set-cont-btn', 'settings-btn');
         this.scheduleBtn.classList.add('set-cont-btn', 'schedule-btn');
         this.setBtnContainer.classList.add('set-cont');
         this.logoutBtn.classList.add('set-cont-btn');
+        this.logoDateCont.classList.add('flex', 'a-center');
         this.avatar.classList.add('avatar');
         this.logo.classList.add('logo');
 
+        this.avatar.innerText = this.name[0];
+        this.logo.innerText = "N.Schedule";
         this.settingsBtn.innerText = 'Settings';
         this.scheduleBtn.innerText = 'Schedule';
         this.logoutBtn.innerText = "Logout";
 
-        this.avatar.innerText = this.name[0];
-        this.logo.innerText = "N.Schedule";
+        this.avatar.addEventListener("click", this.handleAvatarPanel);
 
-        this.avatar.addEventListener("click", function () {
-            avatar.classList.toggle("active");
-            let content = avatar.nextElementSibling;
-            if (content.style.maxWidth) {
-                content.style.maxWidth = null;
-            } else {
-                content.style.maxWidth = '100%';
-            }
-        });
-        this.logoutBtn.addEventListener("click", () => {
-            document.body.removeAttribute('month');
-            api.logout();
-            init();
-        });
+        this.settingsBtn.addEventListener('click', this.handleSettingsPanel);
+
+        this.scheduleBtn.addEventListener('click', this.handleSchedulePanel);
+
+        this.logoutBtn.addEventListener("click", this.logout);
 
         this.avatarContainer.append(this.avatar, this.setBtnContainer);
         this.setBtnContainer.append(this.settingsBtn, this.scheduleBtn, this.logoutBtn);
-        this.headerContainer.append(this.logo, this.curentDate, this.avatarContainer);
+
+        this.logoDateCont.append(this.logo, this.curentDate);
+
+        if (window.innerWidth < 551) {
+            this.headerContainer.append(this.logoDateCont);
+        } else {
+            this.headerContainer.append(this.logo, this.curentDate);
+        }
+        this.headerContainer.append(this.avatarContainer)
     }
+
+    handleAvatarPanel = () => {
+        const avatar = document.querySelector('.avatar');
+        avatar.classList.toggle("active");
+        let content = avatar.nextElementSibling;
+        if (content.style.maxWidth) {
+            content.style.maxWidth = null;
+        } else {
+            content.style.maxWidth = '100%';
+        }
+    };
+
+    handleSettingsPanel = () => {
+        this.handleAvatarPanel();
+        const schCont = document.querySelector('.panel-options');
+        schCont.style.display = 'flex';
+    };
+
+    handleSchedulePanel = () => {
+        this.handleAvatarPanel();
+        const schCont = document.querySelector('.schedule-cont');
+        schCont.style.display = 'flex';
+    };
+
+    logout = () =>{
+        document.body.removeAttribute('month');
+        api.logout();
+        init();
+    };
 
     createMain(calendar) {
         this.mainContaimer.classList.add('main-container', 'flex');

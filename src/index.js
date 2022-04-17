@@ -24,8 +24,3 @@ if (!user) {
 
     new Board(user).render(body);
 }
-const time = '10:20:05'
-const ft = time.replace(/:/g,'')
-const h = ft.slice(0,2);
-const m = ft.slice(2,4);
-console.log(h, m)

@@ -9,6 +9,10 @@ export const handleCloseBtn = (id, main) => {
     const panelOption = document.querySelector('.panel-options');
     panelOption.remove();
     panelCont.prepend(new SetPanel(id, main).render());
+    if (window.innerWidth < 551) {
+        const panelOption = document.querySelector('.panel-options');
+        panelOption.style.display = 'flex'
+    }
 };
 
 export class SetPanel {
@@ -21,6 +25,7 @@ export class SetPanel {
         this.createBtn = document.createElement('button');
         this.setBtn = document.createElement('button');
         this.closeBtn = document.createElement('button');
+        this.backBtn = document.createElement('button');
 
         this.main = main;
         this.createPanel(this.userId)
@@ -44,40 +49,58 @@ export class SetPanel {
         }).render(this.popUpForm);
         this.panelContainer.append(this.popUpForm);
     };
-    handleCloseBtn = () => {
-        handleCloseBtn(this.userId, true);
-    };
+
     handleTaskSet = () => {
         handleCloseBtn(this.userId, false);
+    };
+
+    handleBackBtn = () => {
+        handleCloseBtn(this.userId, true);
+    };
+
+    handleCloseBtn = () => {
+        handleCloseBtn(this.userId, true);
+        if (window.innerWidth < 551) {
+            const panelOption = document.querySelector('.panel-options');
+            panelOption.style.display = 'none'
+        }
     };
 
     createPanel() {
         this.panelContainer.classList.add('panel-options', 'flex-column');
         this.tasksCont.classList.add('tasks', 'flex-column');
-        this.btnBox.classList.add('flex');
+        this.btnBox.classList.add('flex', 'space-between', 'bb');
 
         this.createBtn.classList.add('btn', 'panel-btn');
-        this.createBtn.innerText = 'Create';
+        this.createBtn.innerHTML = `<i class="fa-solid fa-file-circle-plus"></i> New`;
         this.createBtn.addEventListener('click', this.handleTaskCreate);
 
         this.setBtn.classList.add('btn', 'panel-btn');
-        this.setBtn.innerText = 'Set';
+        this.setBtn.innerHTML = `<i class="fa-solid fa-calendar-plus"></i> Set`;
         this.setBtn.addEventListener('click', this.handleTaskSet);
 
-        this.closeBtn.classList.add('btn', 'close-btn');
-        this.closeBtn.innerText = 'Close';
+        this.backBtn.classList.add('btn', 'panel-btn', 'back-btn');
+        this.backBtn.innerHTML = `<i class="fa-solid fa-left-long"></i>`;
+        this.backBtn.addEventListener('click', this.handleBackBtn);
+
+        this.closeBtn.classList.add('btn', 'panel-btn', 'close-btn');
+        this.closeBtn.innerHTML = `<i class="fa-regular fa-circle-xmark"></i>`;
         this.closeBtn.addEventListener('click', this.handleCloseBtn);
 
-        this.btnBox.append(this.createBtn,this.setBtn);
+        if (window.innerWidth < 551) {
+            this.btnBox.append(this.closeBtn);
+        }
 
         if (this.main) {
-            this.panelContainer.prepend(this.btnBox,  this.tasksCont);
+            this.btnBox.prepend(this.createBtn, this.setBtn);
+            this.panelContainer.prepend(this.btnBox, this.tasksCont);
         } else {
-            this.panelContainer.prepend(this.closeBtn, this.tasksCont);
+            this.btnBox.append(this.backBtn, this.closeBtn);
+            this.panelContainer.prepend(this.btnBox, this.tasksCont);
             this.addTask({name: 'Clear task', color: '#110909b3'});
         }
 
-        this.getTask(this.userId)
+        this.getTask(this.userId);
     }
 
     async getTask(id) {
